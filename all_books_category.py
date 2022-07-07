@@ -5,14 +5,16 @@ from bs4 import BeautifulSoup
 page = requests.get('http://books.toscrape.com/')
 print(page.status_code)
 
+web ='http://books.toscrape.com/'
+url_book='https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html'
+
 if page.status_code == 200:
     soup = BeautifulSoup(page.content, "html.parser")
 
     def get_all_books_category():
-        chemin = "http://books.toscrape.com/"
         h3 = soup.select('h3 a')
         for i in h3:
-            print(chemin + i['href'])
+            print(web + i['href'])
 
 
 
@@ -26,6 +28,4 @@ if page.status_code == 200:
 
     print(get_all_books_category())
     
-    
-
-
+   

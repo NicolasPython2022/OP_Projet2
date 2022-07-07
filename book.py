@@ -1,6 +1,4 @@
 
-from calendar import c
-from turtle import title
 from bs4 import BeautifulSoup
 import requests
 import csv
