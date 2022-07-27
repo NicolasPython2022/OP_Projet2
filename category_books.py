@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+#from book import *
 
 page = requests.get('http://books.toscrape.com/')
 print(page.status_code)
@@ -15,10 +16,10 @@ if page.status_code == 200:
         for i in ahref:
             print(chemin + i.attrs['href'])      # Permet de recup les differents attributs associer
 
-    print(get_url_books())
+print(get_url_books())
 
 
-    
+
     
 
 
