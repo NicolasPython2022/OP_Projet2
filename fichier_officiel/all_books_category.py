@@ -3,11 +3,36 @@ import requests
 
 # Definition de ma function
 def get_all_books_category(category):
-    """Retourne une page de livre d'une category
+    """Retourne toutes les pages d'une category
     
-    Cette function recupere l'url d'une page d'une category qui via une boucle for,
-    selectionnera l'attribut du lien qui sera concatainer a une variable ici chemin.
+    Cette function recupere via l'url d'une page de category, toute les pages de celle-ci,
+    qui par une boucle for prendra en selection l'attribut du lien,
+    qui sera ensuite concatainer a une variable nomme ici chemin.
+
+    Dans un premier temps je definit l'indice de la category par une url que je viens avec
+    la methode requests et BeautifulSoup, parsemer la page de l'url donner.
+    Je recupere ensuite les balises rechercher via la methode find de BeautifulSoup.
+
+    Secondement je boucle avec for la balise un element de toutes mes balises identifier.
+    J'assimile a une var l'element identifier que je credite de l'attribut de celui-ci en "str".
+    La methode ".split" me permet de diviser ma chaine en une liste,
+    ou chaque mot est un element de la liste.
+    Je passe en separateur de division de ma chaine "/" a la methode split,
+    puis j'indique ensuite la valeur de l'attribut identifier et definit.
+    Je conditionne pour finir, que "category en param de ma function,
+    soit strictement egal a ma var "cat" pour definir mon indice,
+    et je "break" pour sortir de ma boucle.
     
+    Troisiement, j'extrait l'url de ma page pricipale,
+    que je formate en lui indiquant entre accolades, la category et l'indice separer.
+
+    J'extrait ensuite le nombres de resultats.
+    Puis je conditionne la pagination au nombre max de livres ce trouvant sur une page url,
+    dans une liste qui sera accrementer par une boucle "for" via la methode ".append",
+    et via la methode ".replace" je viens remplacer la chaine selectionner par un lien,
+    qui ici est ma var chemin.
+
+    Je termine en retournant la valeur de ma function.
     """
     # Definir l'indice de la category
     url_home = 'http://books.toscrape.com/index.html'
@@ -18,10 +43,10 @@ def get_all_books_category(category):
 
     # Boucle qui recupere tts les urls des category pour trouver l'indice de la category donner
     for a in all_a:
-        cat_ind = a['href'].split("/")[-2]      # recupere l'indice et la category
-        cat = cat_ind.split("_")[0]             # recup queb la category de l'href ci-dessus ( methode slip pr transformer une chaine de caractere en liste)
-        if category==cat:       # Condition 
-            indice=cat_ind.split("_")[-1]       # retenir l'indice qui ce situe en dernier de la chaine transformer en liste en utilisant 
+        cat_ind = a['href'].split("/")[-2]    
+        cat = cat_ind.split("_")[0]             
+        if category==cat:
+            indice=cat_ind.split("_")[-1]    
             break  
 
     # Extraction de l'url de la page principale
@@ -52,14 +77,15 @@ def get_all_books_category(category):
             chemin = "http://books.toscrape.com/catalogue/"
             for a in h3:
                 url_books.append(a['href'].replace('../../../', chemin))
-
+    
     return url_books  
-'''
-1 Apres avoir definit la fonction
-2 definir les params de la functions
-3 faire l'appel de la function
+
 
 '''
+category = "classics"
+get_all_books_category(category)
+'''
+
 '''
 category=str(input('Entrer la category : '))
 print("-------------------------------------")

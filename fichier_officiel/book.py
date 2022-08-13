@@ -4,23 +4,23 @@ import requests
 def get_infos_book(url_book):
     """Retourne les infos d'un seul livre
     
-    Si la response a ma demmande de recuperer les infos de la page
-    du nom de ma var 'url_book' est 'ok',alors celle-ci via
-    la methode BeautifulSoup recuperera toutes le html de la page stocker
-    dans ma var 'url_book', sous la forme d'un texte parser,
+    Si la response a ma demmande de recuperer les infos de l'url assignee
+    a ma var 'url_book' est 'ok', alors celle-ci via
+    la methode BeautifulSoup recuperera tout le html de la page stocker
+    dans 'url_book' sous la forme d'un texte parser
     via la methode inclus 'html.parser'.
-    Ensuite le titre est recuperer via la methgode .find,
+    Ensuite le titre est recuperer via la methode ".find"
     qui prendra en son parametre le nom de la balise selectionner et
-    celui-ci sera stocker dans mon dictionnaire 'book_data',
-    a qui je lui donne un nom de key.
-    La category sera recuperer via la methode .select qui prendra en
-    parametre une balise parent, dont une boucle for selectionnera
-    la balise enfant souhaiter  et avec la methode strip(),
+    celle-ci sera ensuite stocker dans mon dictionnaire 'book_data',
+    a qui j'assigne un nom en "key".
+    La category sera recuperer via la methode ".select" qui prendra en
+    parametre une balise parent, dont une boucle "for" selectionnera
+    la balise enfant souhaiter  et avec la methode .strip()
     supprimera les caracteres non souhaiter a l'affichage.
-    La suite recupere l'url de l'image du book et
+    La suite recupere l'url de l'image du livre et
     toutes les infos de la la balise <table> qui sont stocker
     dans mon dictionnaire 'data_book'.
-    Je retourne en fin de block la valeur de mon dictionary,
+    Je retourne en fin de block la valeur de mon dictionnaire,
     et affiche sa valeur.
 
     """
