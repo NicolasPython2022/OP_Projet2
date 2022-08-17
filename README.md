@@ -1,7 +1,9 @@
 # OpenClassrooms - Projet 2 - Books To Scrape
 
-Le script principal main.py permet par l'import des autres scripts que sont book.py et all_books_category.py qui contienent des fonctions(),
-de pouvoir récupérer l'ensemble des catégories de livres présentes sur le site, ainsi que l’ensemble des livres de toutes ces catégories,
+Le script principal main.py permet par l'import des autres scripts que sont
+book.py et all_books_category.py qui contienent des fonctions(),
+de pouvoir récupérer l'ensemble des catégories de livres présentes sur le site http://books.toscrape.com/ ,
+ainsi que l’ensemble des livres de toutes ces catégories,
 puis les données sélectionnées de chaque livres du site par catégorie.
 
 Ces données pour un livre sont :
