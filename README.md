@@ -25,6 +25,9 @@ Chaque image est enregistrées dans un sous dossier au nom de sa catégorie d'ap
 
 
 
+
+
+
 Guide d'installation du programme :
 
 1 - Installer une version à jour de Python
