@@ -22,3 +22,25 @@ Ces données sont ensuite écrites automatiquement dans un fichier csv qui utili
 
 Le script download_images.py permet de télécharger l'image de chaque livres et de les enregistrer dans le dossier ici product_images.
 Chaque image est enregistrées dans un sous dossier au nom de sa catégorie d'appartenance pour plus de clarté.
+
+
+
+Guide d'installation du programme :
+
+1 - Installer une version à jour de Python
+
+2 - Placer vous dans votre répertoire puis cloner celui-ci à l'aide de ces commandes :
+git clone https://github.com/NicolasPython2022/OP_Projet2.git
+
+3 - Une fois dans votre dossier, créer depuis votre terminal un environnement virtuel qui contiendra tout vos paquets pip :
+python3 -m venv env
+
+4 - Activer le en tapant (sur Mac et Linux) :
+source env/bin/activate
+
+5 - Installer les packages requis pour le script :
+pip install -r requirements.txt
+(Taper pip freeze afin de verifier que tout vos paquets sont bien presents.)
+
+6 - Le script main.py peut maintenant être lancé :
+python3 main.py
