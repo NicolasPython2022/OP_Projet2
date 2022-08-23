@@ -21,7 +21,7 @@ for a in name_cat:
     # print(cat_ind)
     list_categories.append(cat_ind)
 
-list_categories.remove(" books ")
+list_categories.remove("books")
 # print(list_categories)
 
 # Creation du header du fichier csv
